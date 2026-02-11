@@ -129,12 +129,14 @@ function showPage(pageName) {
     // Hide all pages
     document.querySelectorAll('.page').forEach(page => {
         page.classList.remove('active');
+        page.classList.add('hidden');
     });
     
     // Show requested page
     const page = document.getElementById(`${pageName}Page`);
     if (page) {
         page.classList.add('active');
+        page.classList.remove('hidden');
         state.currentPage = pageName;
     }
     
